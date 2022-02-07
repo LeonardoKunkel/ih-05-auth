@@ -1,0 +1,6 @@
+# ARCHIVOS
+.env
+package-locke.json
+
+# CARPETAS
+node_modules/
