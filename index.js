@@ -19,6 +19,16 @@ app.set('view engine', 'hbs');
 
 app.use(express.urlencoded({extended: true}));
 
+// 3. Ruteo
+//Layout middleware
+app.use((req, res, next) => {
+
+    res.locals.currentUser = req.session.currentUser;
+    console.log();
+    next()
+
+})
+
 app.use('/', require('./routes/index.routes'));
 app.use('/auth', require('./routes/auth.routes'));
 

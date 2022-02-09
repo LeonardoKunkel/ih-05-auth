@@ -100,3 +100,17 @@ exports.loginForm = async (req, res) => {
     // 5. Redirección al profile
     return res.redirect('/profile');
 }
+
+exports.logout = (req, res) => {
+
+    req.session.destroy((error) => {
+
+        if(error) {
+            console.log(error);
+            return
+        }
+
+        res.redirect('/')
+        
+    })
+}
